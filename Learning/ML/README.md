@@ -1,4 +1,4 @@
-## Why use ML?
+## Why Use ML?
 * Data-driven world
 * Increasing importance of Artificial Intelligence / Machine Learning / Data Science
 
@@ -117,4 +117,73 @@ After clarifying what data is available, we brainstorm what type of ML should be
 As every ML algorithm requires input data in the form of features, we should clarify how should the input data be represented.
 * How do we extract features from raw sources?
 * Consider to include domain experts to specify what data aspects are most important for the particular ML task.
+
+**Offline Evaluation**<br>
+Before any implementation of the ML model training, we would need to specify and set up the methods and metrics to evaluate the system before deployment.
+* Domain specific metrics that justify the deployment of the ML model. For example, simulated with the training and testing data, would the prediction of the model generate more revenue than the revenue created in the “traditional” way.
+* What technical evaluation metrics should be used?
+  * Precision, Recall, F-1 measure.
+  * Accuracy.
+* What is the meaning of model prediction errors such as false positives and false negatives?
+* What is our test data?
+* How much test data do we need to be confident that the ML model performs well?
+
+**Decisions**<br>
+After completing the ML task, Feature engineering, and the evaluation details, the next is to specify:
+* How are prediction used to make decisions?
+* How does the end-user or the system interacts with the model predictions? 
+  * e.g. What happens if the user gets a list of product recommendations? What happens if the incoming e-mail is classified as “spam”?
+* Are there hidden costs in decision making, such as human in the loop?
+
+**Making Predictions**<br>
+This block includes information about when we make a prediction on new inputs.
+* When should predictions be available?
+  * New predictions are made each time when the user opens the app, such as recommendations.
+  * New predictions are made on request.
+  * New predictions are made on schedule.
+* Are predictions made on the fly for each data point or for a batch of the input data?
+* How computationally complex could the model inference get in the application?
+* Is there a human in the loop to support in making predictions?
+
+**Collecting Data**<br>
+Gathers information about new data that should be collected in order to re-train the ML model. In this way, we specify how we prevent the ML model decay phenomenon.
+* How do we label the new data?
+* How expensive is it to collect new data?
+* How expensive is it to process rich media like images, sound, or video?
+* Is there human in the loop for the manual cleaning and labelling of the incoming data?
+
+**Building Models**<br>
+Answers questions regarding updating the ML models, because different ML tasks require different frequencies of model re-training.
+* How often the model should be retrained? 
+  * e.g. hourly, weekly, or with every new data point.
+* What are the hidden costs for model re-training?
+  * e.g. do we use cloud resources to perform such tasks?
+  * what is the price policy of the cloud vendor?
+  * how should we perform hardware cost estimation?
+* How long will it take to re-train the model?
+* How do we deal with the scaling issues of cloud operations as they can be more complex and costly?
+* Do we plan for change in the tech stack?
+  * e.g. how can we deal with the tech stack evolution as new tools and development workflows are emerging in the modern AI?
+
+**Live Evaluation and Monitoring**<br>
+After deployment, the ML model should be evaluated and here we would need to specify both model and business metrics, which should correlate. Generally, the metrics should follow the S.M.A.R.T methodology and be: Specific, Measurable, Achievable, Relevant, and Time-bound.
+* How do we track the system performance? 
+  * e.g. A/B Testing
+* How do we evaluate the value creation?
+  * e.g users spent less time on the inbox.
+
+The deliverable in this stage is the completed Machine Learning Canvas. The effort to fill out this canvas might initiate an existential discussion regarding the real objective and hidden costs for the ML-software. Such a discussion might result in a decision not to implement AI/ML at all. Possible reasons can be as follows:
+* The solution to our problem does not tolerate wrong predictions.
+* Implementing AI/ML would generate a low ROI.
+* The maintenance of the ML/AI project is not guaranteed.
+
+**When to deploy ML/AI? Early vs. Late ML Model Deployment**
+![img_4.png](img_4.png)
+
+## Feature Selection
+The goal of feature selection in machine learning is to find the best set of features that allows one to build useful models of studied phenomena.<br>
+The techniques for feature selection in machine learning can be broadly classified into the following categories:
+* Supervised Techniques: These techniques can be used for labeled data, and are used to identify the relevant features for increasing the efficiency of supervised models like classification and regression.
+* Unsupervised Techniques: These techniques can be used for unlabeled data.
+
 
