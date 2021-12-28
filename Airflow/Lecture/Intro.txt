@@ -1,0 +1,57 @@
+What is Airflow?
+Platform to programmaticaly author, schedule and monitor workflows or data pipelines.
+A workflow management system developed by Airbnb.
+A framework to define tasks and dependencies in Python.
+Executing, scheduling, distributing tasks across worker nodes.
+View of present and past runs, logging feature.
+Extensible plugins.
+UI
+Interact well with DB's
+
+What is a Workflow?
+Sequence of tasks.
+Started on a shcedule or triggered by an event.
+Frequently used to handle big data processing pipelines.
+
+Typical workflows
+1. download data from source
+2. send data somewhere else to process
+3. monitor when the process is completed
+4. get the result and generate the report
+5. send the repot out by email
+
+Traditional ETL approach
+Writing a script to pull data from DB and send it to HDFS to process.
+Schedule the script as a cronjob.
+
+Problems with the traditional approach
+Failure
+Monitoring
+Dependencies
+Scalability
+Deployment
+Process historic data - backfill/rerun historical data
+
+Airflow DAG
+A workflow as a Directed Acyclic Graph (DAG) with multiple tasks which can be executed independently.
+Airflow GADs are composed of Tasks.
+
+Airflow Applications
+Data warehousing: cleanse, organize, data quality check, and publish stream data into our growing DW.
+Machine learning: automate ML workflows.
+Growth analytics: compute metrics aroudn guest and host engagement as well as growth accounting
+Experimentation: compute A/B testing experimentation frameworks logic and aggregates
+Email Targeting: apply rules to target and engage users through email campaigns.
+Sessionization: compute clickstream and time spent datasets.
+Search: compute search ranking related metrics
+Data infrastructure maintenance: database scrapes, folder cleanup, data retention policies...
+
+Steps to write a DAG
+A DAG file, which is basically just a Python script, is a configuration file specifying the DAG's structure as code.
+There are only 5 steps you need to remember to write an Airflow DAG:
+1. Import modules
+2. Default arguments
+3. Instantiate a DAG
+4. Tasks
+5. Setting up dependencies
+
