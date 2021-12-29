@@ -41,6 +41,6 @@ The ability to query either compacted data or real-time data allows you to choos
 - MoR table limitations – MoR tables do not support savepointing. You can query MoR tables using the read-optimized view or the real-time view (tablename_rt) from Spark SQL, Presto, or Hive. Using the read-optimized view only exposes base file data, and does not expose a merged view of base and log data. 
 
 
-## Source:
+## Source
 - https://docs.aws.amazon.com/emr/latest/ReleaseGuide/emr-hudi.html
 - https://hudi.apache.org/docs/concepts/
