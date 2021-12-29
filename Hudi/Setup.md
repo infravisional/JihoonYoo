@@ -12,7 +12,6 @@ hdfs dfs -copyFromLocal /usr/lib/hudi/hudi-spark-bundle.jar /apps/hudi/lib/hudi-
 ```
 hdfs dfs -copyFromLocal /usr/lib/spark/external/lib/spark-avro.jar /apps/hudi/lib/spark-avro.jar
 ```
-```
 
 - Open the notebook editor, enter the code from the following example, and run it. 
 ```
@@ -22,4 +21,20 @@ hdfs dfs -copyFromLocal /usr/lib/spark/external/lib/spark-avro.jar /apps/hudi/li
             "spark.serializer":"org.apache.spark.serializer.KryoSerializer",
             "spark.sql.hive.convertMetastoreParquet":"false"
           }}
+```
+
+## To open the Spark shell on the master node
+```
+spark-shell \
+--conf "spark.serializer=org.apache.spark.serializer.KryoSerializer" \
+--conf "spark.sql.hive.convertMetastoreParquet=false" \
+--jars /usr/lib/hudi/hudi-spark-bundle.jar,/usr/lib/spark/external/lib/spark-avro.jar
+```
+
+## To submit a Spark application that uses Hudi
+```
+spark-submit \
+--conf "spark.serializer=org.apache.spark.serializer.KryoSerializer"\
+--conf "spark.sql.hive.convertMetastoreParquet=false" \
+--jars /usr/lib/hudi/hudi-spark-bundle.jar,/usr/lib/spark/external/lib/spark-avro.jar
 ```
