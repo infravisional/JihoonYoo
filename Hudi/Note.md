@@ -1,4 +1,6 @@
-Hudi
+# Hudi
+
+## Hudi Overview
 
 Open-source data management framework used to simplify incremental data processing and data pipeline development by providing record-level insert, update, upsert, and delete capabilities. 
 
@@ -14,7 +16,7 @@ These features make Hudi suitable for the following use cases:
 3. Implementing a change data capture (CDC) system that allows you to apply changes to a dataset over time. 
 
 
-How Hudi Works
+## How Hudi Works
 
 You can write data to the dataset using the Spark Data Source API or the Hudi DeltaStreamer utility. Hudi organizes a dataset into a partitioned directory structure under a basepath that is similar to a traditional Hive table. The specifics of how the data is laid out as files in these directories depend on the dataset type that you choose. You can choose either Copy on Write (CoW) or Merge on Read (MoR). 
 
@@ -23,7 +25,7 @@ Regardless of the dataset type, each partition in a dataset is uniquely identifi
 Each action in Hudi has a corresponding commit, identified by a monotonically increasing timestamp known as an Instant. Hudi keeps a series of all actions performed on the dataset as a timeline. Hudi relies on the timeline to provide snapshot isolation between readers and writers, and to enable roll back to a previous point in time.
 
 
-Understanding dataset storage types: Copy on write vs. merge on read
+## Understanding dataset storage types: Copy on write vs. merge on read
 
 Copy on Write (CoW) – Data is stored in a columnar format (Parquet), and each update creates a new version of files during a write. CoW is the default storage type. 
 Merge on Read (MoR) – Data is stored using a combination of columnar (Parquet) and row-based (Avro) formats. Updates are logged to row-based delta files and are compacted as needed to create new versions of the columnar files. 
@@ -40,7 +42,7 @@ The ability to query either compacted data or real-time data allows you to choos
 Hudi creates two tables in the Hive metastore for MoR: a table with the name that you specified, which is a read-optimized view, and a table with the same name appended with _rt, which is a real-time view. You can query both tables. 
 
 
-Considerations and limitations for using Hudi on Amazon EMR
+## Considerations and limitations for using Hudi on Amazon EMR
 
 Record key field cannot be null or empty – The field that you specify as the record key field cannot have null or empty values. 
 
