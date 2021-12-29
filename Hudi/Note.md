@@ -2,15 +2,11 @@
 
 ## Hudi Overview
 
-Open-source data management framework used to simplify incremental data processing and data pipeline development by providing record-level insert, update, upsert, and delete capabilities. 
-
-Hudi is integrated with Apache Spark, Apache Hive, and Presto. In Amazon EMR release versions 6.1.0 and later, Hudi is also integrated with Trino (PrestoSQL). 
-
-With Amazon EMR release version 5.28.0 and later, EMR installs Hudi components by default when Spark, Hive, Presto, or Flink are installed. You can use Spark or the Hudi DeltaStreamer utility to create or update Hudi datasets.
-
-You can use Hive, Spark, Presto, or Flink to query a Hudi dataset interactively or build data processing pipelines using incremental pull. (Incremental pull refers to the ability to pull only the data that changed between two actions.)
-
-These features make Hudi suitable for the following use cases:
+- Open-source data management framework used to simplify incremental data processing and data pipeline development by providing record-level insert, update, upsert, and delete capabilities. 
+- Hudi is integrated with Apache Spark, Apache Hive, and Presto. In Amazon EMR release versions 6.1.0 and later, Hudi is also integrated with Trino (PrestoSQL). 
+- With Amazon EMR release version 5.28.0 and later, EMR installs Hudi components by default when Spark, Hive, Presto, or Flink are installed. You can use Spark or the Hudi DeltaStreamer utility to create or update Hudi datasets.
+- You can use Hive, Spark, Presto, or Flink to query a Hudi dataset interactively or build data processing pipelines using incremental pull. (Incremental pull refers to the ability to pull only the data that changed between two actions.)
+- These features make Hudi suitable for the following use cases:
 1. Working with streaming data from sensors and other Internet of Things (IoT) devices that require specific data insertion and update events. 
 2. Complying with data privacy regulations in applications where users might choose to be forgotten or modify their consent for how their data can be used. 
 3. Implementing a change data capture (CDC) system that allows you to apply changes to a dataset over time. 
