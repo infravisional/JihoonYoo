@@ -40,13 +40,6 @@ The ability to query either compacted data or real-time data allows you to choos
 - Deletion requires schema – When deleting, you must specify the record key, the partition key, and the pre-combine key fields. Other columns can be made null or empty, but the full schema is required. 
 - MoR table limitations – MoR tables do not support savepointing. You can query MoR tables using the read-optimized view or the real-time view (tablename_rt) from Spark SQL, Presto, or Hive. Using the read-optimized view only exposes base file data, and does not expose a merged view of base and log data. 
 
-
-## Source
-- https://docs.aws.amazon.com/emr/latest/ReleaseGuide/emr-hudi.html
-- https://hudi.apache.org/docs/concepts/
-
-
-
 # Hudi Setup
 
 ## To use Hudi with Amazon EMR Notebooks
@@ -87,3 +80,8 @@ spark-submit \
 --conf "spark.sql.hive.convertMetastoreParquet=false" \
 --jars /usr/lib/hudi/hudi-spark-bundle.jar,/usr/lib/spark/external/lib/spark-avro.jar
 ```
+
+
+## Source
+- https://docs.aws.amazon.com/emr/latest/ReleaseGuide/emr-hudi.html
+- https://hudi.apache.org/docs/concepts/
